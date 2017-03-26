@@ -1,0 +1,115 @@
+ion-content {
+    margin-bottom: 0px !important;
+    background: radial-gradient(rgba(242, 0, 0, 0.5), rgba(94, 0, 0, 1));
+    background-image: url("/img/farm.jpg") no-repeats;
+}
+title{
+  font-style: italic;
+  color: black;
+  font-weight: bold;
+}
+.myback {
+  color: #444444;
+  background-color: lightseagreen;
+  font-size: 20px;
+}
+
+p{
+  color: whitesmoke;
+}
+
+.special {
+  background-color: #f20000;
+  color: whitesmoke;
+
+}
+
+.imondback {
+	background: radial-gradient(rgba(242, 0, 0, 0.5), rgba(94, 0, 0, 1));
+}
+
+.imondred {
+  background-color:rgba(242, 0, 0, 0.9);
+}
+
+.imondwhite {
+  color: #ffffff;
+}
+
+.imondround {
+   border-radius: 25px;
+   background-color: rgba(242, 0, 0, 0.5);
+    padding: 20px;
+
+}
+
+.mybacky {
+  background-color: transparent;
+}
+input, textarea, .item-input, .item-input-wrapper {
+  background-color: #f4f4f4 !important;
+}
+
+.no-border {
+	border: none;
+}
+
+.user {
+    font-weight: bold;
+}
+.chat-bubble-right {
+  border-radius: 30px;
+  /*display: inline-block;*/
+  /*padding: 0 0 0 0;*/
+  /*border-bottom-right-radius: -5px;*/
+  /*position: relative;*/
+  margin: 10px;
+  /*max-width: 80%;*/
+  background-color: lightgray;
+  float: right;
+  clear: both;
+  /*margin-right: 55px;*/
+}
+
+.chat-bubble-left {
+  border-radius: 30px;
+  /*display: inline-block;*/
+  /*padding: 0 0 0 0;*/
+  /*border-bottom-right-radius: -5px;*/
+  /*position: relative;*/
+  margin: 10px;
+  background-color: lightseagreen;
+  float: left;
+  clear: both;
+  /*margin-left: 55px;*/
+}
+
+.chat-bubble-right:before {
+  content: "\00a0";
+  display: block;
+  height: 16px;
+  width: 9px;
+  position: absolute;
+  bottom: -7.5px;
+  background-color: lightgray;
+  right: 10px;
+  transform: rotate(118deg) skew(-5deg);
+
+}
+
+.chat-bubble-left:before {
+  content: "\00a0";
+  display: block;
+  height: 16px;
+  width: 9px;
+  position: absolute;
+  bottom: -7.5px;
+  background-color: lightseagreen;
+  left: 10px;
+  transform: rotate(70deg) skew(5deg);
+}
+
+.chat-bubble.right a.autolinker {
+  color: #fff;
+  font-weight: bold;
+}

@@ -1,0 +1,30 @@
+<ion-view title="Login">
+ 	<header class="bar bar-header special">
+ 		<h1 class="title">Login</h1>
+ 	</header>
+
+  <ion-content class="has-header padding">
+
+	<div class="list">
+	<form class="loginForm" ng-submit="login" method="post">
+    <div class="form-group">
+      <label class="item item-input">
+        <input type="text" placeholder="User Name" ng-model="user.name">
+      </label>
+    </div>
+
+    <div class="form-group">
+      <label class="item item-input">
+        <input type="password" placeholder="password" ng-model="user.password">
+      </label>
+    </div>
+
+    <div class="padding">
+      <button class="button special button-full" ng-click="login()">Enter</button>
+    </div>
+	</form>
+	</div>
+    <button class="button button-positive button-clear button-full" ui-sref="register">Register now!</button>
+  </ion-content>
+
+</ion-view>

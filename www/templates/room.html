@@ -1,0 +1,35 @@
+<ion-view view="menuContent" title="" >
+ <ion-content class="has-subheader has-footer">
+
+	<div class="list" id="messages" ng-if="room_ctrl.messages.length > 0">
+	    <li class="item item-text-wrap no-border {{ isNotCurrentUser(msg.user) }}" >
+	    	<div class="msg">
+		    	<div class="details padding">
+						<h3>{{ msg.user }}</h3>
+						<div>{{ msg.text}}</div>
+
+					<small>{{ humanize(msg.time) }}</small>
+		    	</div>
+	    	</div>
+	    </li>
+	</div>
+
+	<div class="card" ng-if="!room_ctrl.messages.length">
+	  <div class="item item-text-wrap special" align="center">
+	  You can trust us with your privacy.
+	  </div>
+	</div>
+
+  </ion-content>
+
+
+<footer class="bar bar-footer special item-input-inset">
+
+    <label class="item-input-wrapper">
+      <input type="text" ng-model="room_ctrl.message" placeholder="Type a message">
+    </label>
+   	<button class="button button-icon icon ion-navigate" ng-click="sendTextMessage()" ></button>
+
+</footer>
+
+</ion-view>

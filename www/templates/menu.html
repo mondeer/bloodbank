@@ -1,0 +1,106 @@
+<ion-side-menus class="imondred imondwhite" enable-menu-with-back-views="true">
+  <ion-side-menu-content>
+    <ion-nav-bar class="header-bar imondred">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button imondwhite button-icon ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+
+      <ion-nav-buttons side="right">
+        <a class="button button-icon ion-home imondwhite" menu-close href="#/menu/home">
+        </a>
+        <span></span>
+        <span></span>
+        <a class="button button-icon ion-android-settings imondwhite" menu-close href="#">
+        </a>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-tabs class="tabs-icon-top tabs-striped tabs-background-balanced">
+
+      <!-- Dashboard Tab -->
+      <ion-tab class="special" title="Status" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/menu/home">
+        <ion-nav-view ></ion-nav-view>
+      </ion-tab>
+
+      <!-- Chats Tab -->
+      <ion-tab class="special" title="Chats" icon="ion-heart" href="#/menu/rooms">
+        <ion-nav-view ></ion-nav-view>
+      </ion-tab>
+
+      <!-- Account Tab -->
+      <ion-tab class="special" title="Account" icon="ion-ios-gear" href="#">
+        <ion-nav-view></ion-nav-view>
+      </ion-tab>
+
+
+    </ion-tabs>
+
+
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu class="special" side="left">
+    <!-- <ion-header-bar>
+
+    </ion-header-bar> -->
+    <ion-content class="padding">
+
+      <div class="list  special">
+        <div align="center special">
+          <img src="img/farm1.jpeg" width="250" height="200">
+          <h2>BloodBank</h2>
+          <p>A place where Lives are saved</p>
+        </div>
+      <a class="item item-icon-left special" menu-close href="#">
+        <i class="icon ion-email"></i>
+        KNBTS` Bulletin
+      </a>
+
+      <a class="item item-icon-left item-icon-right  special" menu-close href="#">
+        <i class="icon ion-heart"></i>
+          Donor Agents
+        <span class="item-note">
+          we are here to serve
+        </span>
+      </a>
+
+
+      <a class="item item-icon-left special" menu-close href="#">
+        <i class="icon ion-calendar"></i>
+          Blood Drive Schedules
+        <!-- <span class="badge badge-assertive">0</span> -->
+      </a>
+
+      <a class="item item-icon-left special" menu-close href="#">
+        <i class="icon ion-medkit"></i>
+        Ministry of Health
+        <span class="item-note">
+          Home of Agribusiness
+        </span>
+      </a>
+
+      <a class="item item-icon-left text special" menu-close href="#">
+        <i class="icon text ion-help-circled"></i>
+        About Us
+        <!-- <span class="badge badge-assertive">0</span> -->
+      </a>
+
+    </div>
+
+    <h3 align="center" class="special">My Lib</h3>
+    <div class="list text body">
+      <a class="item item-icon-left special" menu-close href="#">
+        <i class="icon ion-image"></i>
+        Gallery
+        <!-- <span class="badge badge-assertive">0</span> -->
+      </a>
+    </div>
+
+
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

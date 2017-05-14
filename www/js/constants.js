@@ -5,5 +5,5 @@ angular.module('BloodBank')
 })
 
 .constant('API_ENDPOINT', {
-  url: 'http://192.168.0.190:8080/api'
+  url: 'http://192.168.1.10:8080/api'
 });

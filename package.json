@@ -1,7 +1,7 @@
 {
   "name": "BloodBank",
   "version": "1.1.1",
-  "description": "BloodBank: An Agrics Home",
+  "description": "BloodBank:",
   "dependencies": {
     "angular-oauth2": "^4.1.0",
     "angular-resource": "^1.6.2",

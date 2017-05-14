@@ -1,4 +1,4 @@
-angular.module('BloodBank', ['ionic'])
+angular.module('BloodBank', ['ionic', 'ionic-material', 'ionMdInput', 'ionic.contrib.frost'])
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 	  $ionicConfigProvider.tabs.position('top');

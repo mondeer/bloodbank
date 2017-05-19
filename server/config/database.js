@@ -1,4 +1,4 @@
 module.exports = {
-  'secret': 'devdacticIsAwesome',
-  'database': 'mongodb://localhost/node-rest-auth'
+  'secret': 'mondeer',
+  'database': 'mongodb://localhost/bloodbank'
 };

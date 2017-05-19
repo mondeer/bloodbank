@@ -1,14 +1,8 @@
 angular.module('BloodBank')
 
 .controller('LoginCtrl', function($scope, $timeout, AuthService, $ionicPopup, $state, ionicMaterialInk) {
-  $scope.$parent.clearFabs();
-    $timeout(function() {
-        $scope.$parent.hideHeader();
-    }, 0);
-  ionicMaterialInk.displayEffect();
-
   $scope.user = {
-    name: '',
+    email: '',
     password: ''
   };
 
@@ -26,7 +20,7 @@ angular.module('BloodBank')
 
 .controller('RegisterCtrl', function($scope, AuthService, $ionicPopup, $state) {
   $scope.user = {
-    name: '',
+    email: '',
     password: ''
   };
 
@@ -46,7 +40,41 @@ angular.module('BloodBank')
   };
 })
 
-.controller('InsideCtrl', function($scope, AuthService, API_ENDPOINT, $http, $state) {
+.controller('TodoCtrl', function($scope,  $http, AuthService, $ionicPopup, $state) {
+  $scope.todo = {
+    actitivityId: '',
+    inviteBy: '',
+    completionDate: '',
+    endDate: '',
+    status: '',
+    userId: ''
+  };
+
+  $scope.insert = function() {
+    $http.post("http://localhost:8000/api/todo",$scope.todo).success(function(data,status){
+      console.log(data);
+    }).error(function(error){
+      console.log("error is that ",error);
+    });
+  };
+
+  $scope.todo = function() {
+    AuthService.todo($scope.todo).then(function(msg) {
+      $state.go('menu.home');
+      var alertPopup = $ionicPopup.alert({
+        title: 'Register success!',
+        template: msg
+      });
+    }, function(errMsg) {
+      var alertPopup = $ionicPopup.alert({
+        title: 'Register failed!',
+        template: errMsg
+      });
+    });
+  };
+})
+
+.controller('InsideCtrl', function($scope, AuthService, API_ENDPOINT, $http, ionicMaterialMotion, ionicMaterialInk, $state) {
   $scope.destroySession = function() {
     AuthService.logout();
   };

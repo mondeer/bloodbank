@@ -1,30 +1,33 @@
-<ion-view title="Register">
- 	<header class="bar bar-header special">
- 		<h1 class="title">Create New Blood Donor</h1>
- 	</header>
+<ion-view view-title="Register" align-title="left" >
+    <ion-content style="background: url(img/blood1.jpg) center; background-size: cover;">
+        <div class="hero no-header flat">
+            <div class="content">
+                <div class="icon larger imondred ion-ios-heart"></div>
+                <h1>BloodBank</h1>
+            </div>
+        </div>
+        <!-- <form class="loginForm" ng-submit="login" method="post"> -->
+          <div class="list imondopac">
+             <label class="item item-input-inset">
+             <span class="input-label imondred">Email</span>
+             <input type="email" placeholder="Enter Email" ng-model="user.email">
+             </label>
 
-  <ion-content class="has-header padding">
+             <label class="item item-input-inset">
+             <span class="input-label imondred">Password</span>
+             <input type="password" placeholder="Password" ng-model="user.password">
+             </label>
+          </div>
+          <div class="padding">
+              <button ng-click="signup()" class="button button-full button-assertive ink">Register</button>
+          </div>
+        <!-- </form> -->
+          <div class="padding">
+              <a class="button button-success" ui-sref="login">Already Registered? Login</a>
+          </div>
 
-	<div class="list">
-	<form class="loginForm" ng-submit="login" method="post">
-    <div class="form-group">
-      <label class="item item-input">
-        <input type="text" placeholder="User Name" ng-model="user.name">
-      </label>
-    </div>
-
-    <div class="form-group">
-      <label class="item item-input">
-        <input type="password" placeholder="password" ng-model="user.password">
-      </label>
-    </div>
-
-    <div class="padding">
-      <button class="button special button-full" ng-click="signup()">Register</button>
-    </div>
-	</form>
-	</div>
-
-  </ion-content>
-
+        <div class="button-bar social-login">
+            <button class="button button-small button-border icon-center ion-heart button-positive-900">@Timo</button>
+        </div>
+    </ion-content>
 </ion-view>

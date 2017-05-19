@@ -57,6 +57,18 @@ angular.module('BloodBank')
     });
   };
 
+  var todo = function(todo) {
+    return $q(function(resolve, reject) {
+      $http.post(API_ENDPOINT.url + '/todo', todo).then(function(result) {
+        if (result.data.success) {
+          resolve(result.data.msg);
+        } else {
+          reject(result.data.msg);
+        }
+      });
+    });
+  };
+
   var logout = function() {
     destroyUserCredentials();
   };
@@ -67,6 +79,7 @@ angular.module('BloodBank')
     login: login,
     register: register,
     logout: logout,
+    todo: todo,
     isAuthenticated: function() {return isAuthenticated;},
   };
 })

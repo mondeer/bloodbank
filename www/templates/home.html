@@ -1,20 +1,50 @@
-<ion-view view-title="BloodBank">
-  <ion-content class="padding">
-    <div class="card imondround" align="center">
-      <h2 class="imondwhite">Welcome to BloodBank</h2>
-      <p>
-      This is a platform for blood donors.
-      </p>
-      <p>
-        To interact with KNBTS. This app is an initiative where lifes are saved
-      </p>
-      <p>
-      Through this platform, you will be updated on the whereabouts of drives for donations
-      </p>
-      <p>
+<ion-view title="Bulletin">
 
-      </p>
-    </div>
+  <ion-content class="">
+    <form class="loginForm" ng-submit="login" method="post">
+   <div class="form-group">
+     <label class="item item-input">
+       <input type="text" placeholder="Venue" ng-model="todo.actitivityId">
+     </label>
+   </div>
+
+   <div class="form-group">
+     <label class="item item-input">
+       <input type="text" placeholder="Venue" ng-model="todo.inviteBy">
+     </label>
+   </div>
+
+   <div class="form-group">
+     <label class="item item-input">
+       <input type="text" placeholder="Venue" ng-model="todo.completionDate">
+     </label>
+   </div>
+
+   <div class="form-group">
+     <label class="item item-input">
+       <input type="text" placeholder="Venue" ng-model="todo.endDate">
+     </label>
+   </div>
+
+   <div class="form-group">
+     <label class="item item-input">
+       <input type="text" placeholder="Venue" ng-model="todo.status">
+     </label>
+   </div>
+
+   <div class="form-group">
+     <label class="item item-input">
+       <input type="text" placeholder="Venue" ng-model="todo.userId">
+     </label>
+   </div>
+
+   <div class="padding">
+     <button class="button special button-full" ng-click="insert()">Todo Entry</button>
+   </div>
+  </form>
+
+<!--</div>-->
+
   </ion-content>
-  <footer>@Happy to help</footer>
+
 </ion-view>

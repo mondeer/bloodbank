@@ -1,11 +1,14 @@
+
+
 var express     = require('express');
 var app         = express();
 var bodyParser  = require('body-parser');
 var morgan      = require('morgan');
 var mongoose    = require('mongoose');
-var passport	= require('passport');
-var config      = require('./config/database'); // get db config file
-var User        = require('./app/models/user'); // get the mongoose model
+var passport	  = require('passport');
+var config      = require('./config/database');
+var User        = require('./app/models/user');
+var Todo        = require('./app/models/todo');
 var port        = process.env.PORT || 8080;
 var jwt         = require('jwt-simple');
 
@@ -34,19 +37,19 @@ var apiRoutes = express.Router();
 
 // create a new user account (POST http://localhost:8080/api/signup)
 apiRoutes.post('/signup', function(req, res) {
-  if (!req.body.name || !req.body.password) {
-    res.json({success: false, msg: 'Please pass name and password.'});
+  if (!req.body.email || !req.body.password) {
+    res.json({success: false, msg: 'Please pass email and password.'});
   } else {
     var newUser = new User({
-      name: req.body.name,
+      email: req.body.email,
       password: req.body.password
     });
     // save the user
     newUser.save(function(err) {
       if (err) {
-        return res.json({success: false, msg: 'Username already exists.'});
+        return res.json({success: false, msg: 'Email already exists.'});
       }
-      res.json({success: true, msg: 'Successful created new user.'});
+      res.json({success: true, msg: 'Successfully created new user.'});
     });
   }
 });
@@ -64,7 +67,7 @@ app.use(function (req, res, next) {
 
 apiRoutes.post('/authenticate', function(req, res) {
   User.findOne({
-    name: req.body.name
+    email: req.body.email
   }, function(err, user) {
     if (err) throw err;
 
@@ -86,9 +89,28 @@ apiRoutes.post('/authenticate', function(req, res) {
   });
 });
 
+
+apiRoutes.post('/todo', function(req, res) {
+    var newTodo = new Todo({
+      actitivityId: req.body.actitivityId,
+      inviteBy: req.body.inviteBy,
+      completionDate: req.body.completionDate,
+      endDate: req.body.endDate,
+      status: req.body.status,
+      userId: req.body.userId,
+    });
+    // save the user
+    newTodo.save(function(err) {
+      if (err) {
+        return res.json({success: false, msg: 'Email already exists.'});
+      }
+      res.json({success: true, msg: 'Successfully created new user.'});
+    });
+});
+
 // connect the api routes under /api/*
 app.use('/api', apiRoutes);
 
 // Start the server
 app.listen(port);
-console.log('There will be dragons: http://localhost:' + port);
+console.log('iMond solutions: http://localhost:' + port);

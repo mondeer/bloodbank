@@ -19,13 +19,14 @@ angular.module('BloodBank', ['ionic', 'ionic-material', 'ionMdInput', 'ionic.con
     templateUrl: 'templates/register.html',
     controller: 'RegisterCtrl'
   })
+
   .state('menu.home', {
     url: '/home',
     templateUrl: 'templates/home.html',
-    controller: 'InsideCtrl'
+    controller: 'TodoCtrl'
   })
 
-	.state('menu.rooms', {
+	.state('home.rooms', {
     url: '/rooms',
     templateUrl: 'templates/rooms.html',
     controller: 'InsideCtrl'
@@ -37,8 +38,8 @@ angular.module('BloodBank', ['ionic', 'ionic-material', 'ionMdInput', 'ionic.con
 .run(function ($rootScope, $state, AuthService, AUTH_EVENTS) {
   $rootScope.$on('$stateChangeStart', function (event,next, nextParams, fromState) {
     if (!AuthService.isAuthenticated()) {
-      console.log(next.name);
-      if (next.name !== 'login' && next.name !== 'register') {
+      console.log(next.email);
+      if (next.email !== 'login' && next.email !== 'register') {
         event.preventDefault();
         $state.go('login');
       }

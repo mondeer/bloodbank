@@ -1,5 +1,5 @@
 {
-  "name": "node-rest-auth",
+  "name": "timo-bloodbank",
   "main": "server.js",
   "dependencies": {
     "bcrypt": "^0.8.5",

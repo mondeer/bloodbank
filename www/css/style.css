@@ -31,7 +31,7 @@ p {
 }
 
 .menu-open .bar.bar-header.expanded {
-    background-color: #222;
+    background-color: #BA0015;
 }
 
 .menu h2 {
@@ -69,11 +69,28 @@ p {
 }
 
 .imondred {
-  color: #4F0D0F;
+  color: #fff;
+}
+
+.login-container {
+    display: -webkit-flex;
+    -webkit-flex-direction: column;
+    height: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efad62), color-stop(100%,#f7d47c));
+    background: -webkit-linear-gradient(top, #efad62 0%,#f7d47c 100%);
+}
+
+.login-container > .button-row img {
+    max-width: 80%;
+}
+
+.login-container > .header {
+    -webkit-flex: 4;
+    padding-top: 20px;
 }
 
 .imondopac {
-  background-color: rgba(230,230,230, 0.8);
+  background-color: rgba(15,46,74, 0.8)
 }
 
 .dark-overlay {
